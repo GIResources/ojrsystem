@@ -1,0 +1,37 @@
+$result = mysqli_query($connection,"SELECT jobs.job_id, jobs.jobcategory, app_biodataform.firstname, app_biodataform.lastname, app_biodataform.phone, app_biodataform.email, qualifications.highestqualification, qualifications.discipline, career_workexperience.lastjobposition, app_passport.passport 
+FROM jobs
+INNER JOIN app_biodataform 
+INNER JOIN qualifications 
+INNER JOIN career_workexperience
+INNER JOIN app_passport
+ON jobs.job_id = app_biodataform.job_id = qualifications.job_id = career_workexperience.job_id = app_passport.id ") 
+
+or die(mysqli_error("Awaiting Resources"));
+
+var_dump($result);
+    exit;
+
+// display data in table
+    
+            while($row = mysqli_fetch_array($result)){
+    
+                        echo '<td>' . $row['job_id'] . '</td>' ;
+                        echo '<td>' . $row['jobcategory'] . '</td>' ;
+                        echo '<td>' . $row['desiredjobposition'] . '</td>';
+                        
+                        echo '<td>' . $row['firstname'] .'&nbsp;'. $row['lastname'] .'</td>';
+                        echo '<td>' . $row['phone'] . '</td>';
+                        echo '<td>' . $row['email'] .'</td>';
+                
+                        echo '<td>' . $row['highestqualification'] .'&nbsp;' . $row['discipline'].'</td>';
+                        
+                        echo '<td>' . $row['lastjobposition'] . '</td>';
+                       
+                        echo "<td>";?><img src= "<?php echo $row['passport'];?>" width="70" height="70"><?php echo "</td>";
+       
+                echo '<td><a href="deleteapplications?id=' . $row['id'] . '">Delete</a></td>';
+                
+                echo "</tr>";
+        
+                            }
+

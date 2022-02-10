@@ -1,0 +1,20 @@
+#form{
+    width: 25%;
+    padding: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 8px solid #dcd;
+    background: #bbf;
+    text-align: center;
+    text-emphasis: bold;
+
+}
+.body{
+    text-align: center;
+    text-emphasis: bold;
+}
+
+h1{
+    text-align: center;
+    font-weight:  normal;
+}

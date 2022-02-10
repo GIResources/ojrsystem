@@ -1,0 +1,22 @@
+echo "<tr>";
+
+echo '<td>' . mysqli_query($connection, $result, $i, 'id') . '</td>';
+
+echo '<td>' . mysqli_query($connection, $result, $i, 'job_sn') . '</td>';
+
+echo '<td>' . mysqli_query($connection, $result, $i, 'jobtitle') . '</td>';
+
+echo '<td>' . mysqli_query($connection, $result, $i, 'jobcode') . '</td>';
+
+echo '<td>' . mysqli_query($connection, $result, $i, 'qualification') . '</td>';
+echo '<td>' . mysqli_query($connection, $result, $i, 'yearsofexperience') . '</td>';
+echo '<td>' . mysqli_query($connection, $result, $i, 'agelimit') . '</td>';
+echo '<td>' . mysqli_query($connection, $result, $i, 'preferredgender') . '</td>';
+echo '<td>' . mysqli_query($connection, $result, $i, 'publicationdate') . '</td>';
+echo '<td>' . mysqli_query($connection, $result, $i, 'expiringdate') . '</td>';
+
+echo '<td><a href="editjobs.php?id=' . $row['id'] . '">Edit</a></td>';
+
+echo '<td><a href="deletejobs.php?id=' . $row['id'] . '">Delete</a></td>';
+
+echo "</tr>";
